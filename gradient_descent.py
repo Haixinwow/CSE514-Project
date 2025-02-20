@@ -1,35 +1,35 @@
-
-def calculation(x, y, alpha, m_old, b_old): 
-    #y = mx + b
+def calculation(x, y, alpha, m_old, b_old):
+    # y = mx + b
     predict_y = m_old * x + b_old
-    error = y-predict_y
+    error = y - predict_y
 
-    #b_new = b_old - alpha * -2 * error 
-    #m_new = m_old - alpha * -2 * error * x
-    #got both formula from lecture slides 3 - Linear Regression and Gradient Descent.pdf page 27
+    # b_new = b_old - alpha * -2 * error
+    # m_new = m_old - alpha * -2 * error * x
+    # got both formula from lecture slides 3 - Linear Regression and Gradient Descent.pdf page 27
     m_new = m_old - alpha * -2 * error * x
     b_new = b_old - alpha * -2 * error
-    
+
     # print(predict_y)
     # print(error)
 
     print(m_new)
     print(b_new)
 
-    return((m_new, b_new))
+    return (m_new, b_new)
 
 
 # calculation(3, 4, 0.1, 1, 1)
 # calculation(540, 80, 0.1, 1, 1)
 
-def calculation_multi(list, alpha, m_old, b_old, length): 
+
+def calculation_multi(list, alpha, m_old, b_old, length):
     sum_m = 0.0
     sum_b = 0.0
-    
-    for pair in list: 
+
+    for pair in list:
         # result = calculation(pair[0], pair[1], alpha, m_old, b_old)
         predict_y = m_old * pair[0] + b_old
-        error = pair[1]-predict_y
+        error = pair[1] - predict_y
 
         sum_m += -2 * error * pair[0]
         sum_b += -2 * error
@@ -38,19 +38,20 @@ def calculation_multi(list, alpha, m_old, b_old, length):
     # print(sum_m)
     # print(sum_b)
 
-    average_m = sum_m/length
-    average_b = sum_b/length
+    average_m = sum_m / length
+    average_b = sum_b / length
     # print("average")
     # print(average_m)
     # print(average_b)
 
     final_m = m_old - alpha * average_m
     final_b = b_old - alpha * average_b
-        
+
     print("final")
     print(final_m)
     print(final_b)
-    
+
+
 # x = 3,  y = 3
 # x = 4,  y = 2
 # x = 10, y = 8
