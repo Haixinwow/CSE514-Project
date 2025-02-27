@@ -13,7 +13,7 @@ with open('Concrete_Data.csv', mode ='r')as file:
     for x, sum in enumerate (sum_list): 
         sum_list[x] = sum / 1030
 mean = sum / 1030
-print (sum_list)
+# print (sum_list)
 
 standard_deviation = [0, 0, 0, 0, 0, 0, 0, 0]
 with open('Concrete_Data.csv', mode ='r')as file:
@@ -31,7 +31,9 @@ import math
 for i, entry in enumerate(standard_deviation): 
     standard_deviation[i] = math.sqrt(entry/1030) 
 
+print("mean: ", sum_list)
 print ("standard deviation: ", standard_deviation)
+
 
 with open('standardized_data.csv', mode ='r')as file:
     csvFile = csv.reader(file)
@@ -65,10 +67,10 @@ with open('standardized_data.csv', mode ='r')as file:
             # print(row)
             rows.append(row)
             # print("done appending")
-    print ("THE FINAL ROWS: ", rows)
-with open('standardized_data.csv', 'w', newline='') as file:
-    writer = csv.writer(file)
-    writer.writerows(rows)
+    # print ("THE FINAL ROWS: ", rows)
+# with open('standardized_data.csv', 'w', newline='') as file:
+#     writer = csv.writer(file)
+#     writer.writerows(rows)
 
 # print(lines)
 # print("standard deviation: ", math.sqrt(numerator/1030))
