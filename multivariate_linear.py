@@ -16,7 +16,7 @@ x7 = []
 x8 = []
 y = []
 
-with open('raw_training.csv', mode ='r')as file:
+with open('standardized_raw_training.csv', mode ='r')as file:
     csvFile = csv.reader(file)
     next(csvFile, None)
     for lines in csvFile:
@@ -43,7 +43,7 @@ def multivariate_linear_regression(x1, x2, x3, x4, x5, x6, x7, x8, y, alpha):
     b = 1
     # print("alpha: ", alpha)
 
-    for i in range (1000):
+    for i in range (10000):
         sum_m1 = 0.0
         sum_m2 = 0.0
         sum_m3 = 0.0
@@ -84,7 +84,7 @@ def multivariate_linear_regression(x1, x2, x3, x4, x5, x6, x7, x8, y, alpha):
     
 
 
-result = multivariate_linear_regression(x1, x2, x3, x4, x5, x6, x7, x8, y, 0.000000583)
+result = multivariate_linear_regression(x1, x2, x3, x4, x5, x6, x7, x8, y, 0.001)
 
 print("m1: ", result[0])
 print("m2: ", result[1])
@@ -99,7 +99,7 @@ print("b: ", result[8])
 
 testing_list = []
 just_y_list = []
-with open('raw_testing.csv', mode ='r')as file:
+with open('standardized_raw_training.csv', mode ='r')as file:
     csvFile = csv.reader(file)
     next(csvFile, None)
     for lines in csvFile:
